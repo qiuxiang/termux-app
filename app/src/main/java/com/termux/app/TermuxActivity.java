@@ -983,8 +983,10 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
 
         FileReceiverActivity.updateFileReceiverActivityComponentsState(this);
 
-        if (mTermuxTerminalSessionActivityClient != null)
+        if (mTermuxTerminalSessionActivityClient != null) {
             mTermuxTerminalSessionActivityClient.onReloadActivityStyling();
+            mTermuxTerminalSessionActivityClient.updateBackgroundColor();
+        }
 
         if (mTermuxTerminalViewClient != null)
             mTermuxTerminalViewClient.onReloadActivityStyling();
